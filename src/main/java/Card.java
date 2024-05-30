@@ -31,4 +31,24 @@ public class Card {
     public boolean getIsSkipReverse(){
         return isSkipReverse;
     }
+    public void setColor(String color){
+        this.color = color;
+    }
+    public void setWild(boolean isWild){
+        this.isWild = isWild;
+    }
+    public void setNumber(int number){
+        this.number = number;
+    }
+    /*override*/
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Card otherCard = (Card) obj;
+        return number == otherCard.number && color.equals(otherCard.color);
+    }
 }
